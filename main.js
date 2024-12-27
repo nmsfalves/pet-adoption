@@ -15,7 +15,7 @@ start();
 
 async function petsArea() {
   const petsPromise = await fetch(
-    'https://learnwebcode.github.io/bootcamp-pet-data/pets.json'
+    'https://exquisite-cat-849514.netlify.app/.netlify/functions/pets'
   );
   const petsData = await petsPromise.json();
   petsData.forEach((pet) => {
@@ -23,7 +23,7 @@ async function petsArea() {
     clone.querySelector('.pet-card').dataset.species = pet.species;
     clone.querySelector('h3').textContent = pet.name;
     clone.querySelector('.pet-description').textContent = pet.description;
-    clone.querySelector('.pet-age').textContent = createAgeText(pet.birthYear);
+    clone.querySelector('.pet-age').textContent = createAgeText(pet.birthyear);
     if (!pet.photo) {
       pet.photo = 'images/fallback.jpg';
     }
